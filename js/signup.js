@@ -1,5 +1,6 @@
 const form = document.querySelector(".signup form")
 const continueBtn = form.querySelector(".button input")
+const errorText = form.querySelector(".error-text")
 
 form.onsubmit = (e) => {
     e.preventDefault(); // preventing form from submitting (ngăn không cho biểu mẫu gửi) 
@@ -13,7 +14,13 @@ continueBtn.onclick = () => {
         if(xhr.readyState === XMLHttpRequest.DONE) {
             if(xhr.status === 200) {
                 let data = xhr.response;
-                console.log(data);
+                // Nếu signup success sẽ đưa user vào trang user.php
+                if(data == "success") {
+                    location.href = "users.php";
+                }else {
+                    errorText.style.display = "block";
+                    errorText.textContent = data;
+                }
             } 
         }
     }
