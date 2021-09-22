@@ -1,5 +1,7 @@
 <?php 
+    session_start();
     include_once "config.php";
+    $outgoing_id = $_SESSION['unique_id'];
     // these response are sending ajax to php and getting from php to ajax
     $searchTerm = mysqli_real_escape_string($conn, $_POST['searchTerm']);
     $output = "";

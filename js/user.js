@@ -47,4 +47,4 @@ setInterval(() => {
     }
   };
   xhr.send();
-}, 2000) // this function will run frequently after 1000
+}, 1000) // this function will run frequently after 3000ms

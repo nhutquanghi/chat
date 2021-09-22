@@ -28,23 +28,18 @@
         </header>
 
         <div class="chat-box">
-          <div class="chat outgoing">
-            <div class="details">
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing el itamet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          <div class="chat incoming">
-            <img src="./assets/images/avatar.jpg" alt="">
-            <div class="details"> 
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
+            <!-- xử lý ajax -->
         </div>
-        <form action="#" class="typing-area">
-          <input type="text" placeholder="Type a message here...">
+
+        <form action="#" class="typing-area" autocomplete="off">
+          <input type="text" name="outgoing_id" value="<?php echo $_SESSION['unique_id']; ?>" hidden> <!-- msg_sender_id -->
+          <input type="text" name="incoming_id" value="<?php echo $user_id; ?>" hidden> <!-- msg_receiver_id -->
+          <input type="text" name="message" class="input-field" placeholder="Type a message here...">
           <button><i class="fab fa-telegram-plane"></i></button>
         </form>
       </section>
     </div>
+
+    <script src="./js/chat.js"></script>
   </body>
 </html>
